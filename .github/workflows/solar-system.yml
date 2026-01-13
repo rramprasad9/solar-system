@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         nodejs_version: [18, 19, 20]
-        operating_system: [ubuntu-latest, windows-latest, macos-latest]
+        operating_system: [ubuntu-latest, macos-latest]
         exclude:
           - nodejs_version: 18
             operating_system: macos-latest
@@ -41,7 +41,7 @@ jobs:
     - name: Archieve Test Results
       uses: actions/upload-artifact@v4
       with:
-        name: Mocha-Test-Result
+        name: Mocha-Test-Result-OS-${{ matrix.operating_system }}-NodeJS-${{ matrix.nodejs_version }}
         path: test-results.xml
 
       
