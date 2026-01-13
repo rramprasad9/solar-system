@@ -32,9 +32,9 @@ jobs:
       run: npm test
 
     - name: Archieve Test Results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Mocha-Test-Result
         path: test-results.xml
-        
+
       
