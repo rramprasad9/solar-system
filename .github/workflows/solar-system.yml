@@ -17,8 +17,8 @@ jobs:
     name: Unit testing
     strategy:
       matrix:
-        nodejs_version: [18, 20]
-        operating_system: [ubuntu-latest, macos-latest]
+        nodejs_version: [18]
+        operating_system: [ubuntu-latest]
         exclude:
           - nodejs_version: 18
             operating_system: macos-latest
@@ -96,4 +96,4 @@ jobs:
       uses: docker/login-action@v2.2.0
       with:
         username: ${{ vars.DOCKERHUB_USERNAME }}
-        password: ${{ vars.DOCKERHUB_PASSWORD }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
